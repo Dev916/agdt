@@ -16,29 +16,31 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 
-const user = require("./routes/userRoute");
-const product = require("./routes/productRoute");
-const order = require("./routes/orderRoute");
-const payment = require("./routes/paymentRoute");
-
-app.use("/api/user", user);
-app.use("/api/product", product);
-app.use("/api/order", order);
-app.use("/api/payment", payment);
+// const user = require("./routes/userRoute");
+// const product = require("./routes/productRoute");
+// const order = require("./routes/orderRoute");
+// const payment = require("./routes/paymentRoute");
+const aboutKitty = require("./routes/aboutKittyRoute");
+// app.use("/api/user", user);
+// app.use("/api/product", product);
+// app.use("/api/order", order);
+// app.use("/api/payment", payment);
 
 // deployment
-__dirname = path.resolve();
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/build")));
+// __dirname = path.resolve();
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-  });
-} else {
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+//   });
+// } else {
   app.get("/", (req, res) => {
     res.send("Server is Running! 🚀");
   });
-}
+// }
+
+app.use("/api/kitty", aboutKitty);
 
 // error middleware
 // app.use(errorMiddleware);
