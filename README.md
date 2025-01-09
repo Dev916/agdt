@@ -43,11 +43,11 @@ Developed a responsive e-commerce platform for "Art Waves," a digital art market
 Install dependencies
 
 ```bash
-  npm install
+  make build
 ```
 
 Start the server
 
 ```bash
-  npm run start
+  make run
 ```
