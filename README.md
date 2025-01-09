@@ -51,3 +51,15 @@ Start the server
 ```bash
   make run
 ```
+
+
+Example routes:
+
+
+```
+http://localhost:4000/api/kitty
+```
+
+```
+http://localhost:4000/api/kitty/0xb437a9b7ec3cc154cdccdbdc1c1bd243cf70a42d
+```
